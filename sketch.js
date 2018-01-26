@@ -9,24 +9,32 @@ var back = 1;
 var clr;
 var angle = 0;
 var angle2 = 0;
-
+var distance;
+var isoversun;
+var blackhole;
+var frameclick;
 
 function setup(){
     createCanvas(1300, 550);
     clr = color(107, 142, 35);
     rectMode(CENTER);
+    
 }
 
 
 function draw(){
+
+    distance = dist(mouseX, mouseY, 625, 254);
+    
+
     background(255, 255, 255);
 
     if (mouseX < 200) {
         cursor(HAND);
       } else {
         cursor(WAIT);
-      }''
-      
+      }
+    
 
     //sun
     push();
@@ -69,19 +77,31 @@ function draw(){
     x = x + back*5;
     pop();
 
-
-    if(mouseIsPressed){
-        explode();
-    }
-    cosmicbackground();
-
-}
-function mouseClicked() {
-    if (value === 0) {
-        value = 255;
+    if (distance< 75) {
+        isoversun = true;
       } else {
-        value = 0;
+        isoversun = false;
       }
+
+    // if(mouseClicked){
+    //     explode();
+    // }
+
+    // cosmicbackground();
+    if(blackhole == true){
+    push();
+    noStroke();
+    fill(0,0,0);
+    ellipse(630,250,80+(frameCount-frameclick),80+(frameCount-frameclick));
+    pop();
+    }
+}
+function mousePressed() {
+    if(isoversun == true){
+        blackhole = true; 
+        frameclick = frameCount;        
+    }
+    
   }
 function polygon(x, y, radius, npoints) {
     var angle = TWO_PI / npoints;
@@ -116,7 +136,7 @@ function cosmicbackground(){
     rotate(0.4);
     stroke(255, 204, 0);
     strokeWeight(3);
-    ellipse(0,0,80+(sin(frameCount/10)*30),10);
+    ellipse(0,0,95+(sin(frameCount/10)*30),10);
     translate(-250, -0);
     pop();
 
