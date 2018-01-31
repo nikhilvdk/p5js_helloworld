@@ -83,9 +83,6 @@ function draw(){
         isoversun = false;
       }
 
-    // if(mouseClicked){
-    //     explode();
-    // }
 
     // cosmicbackground();
     if(blackhole == true){
@@ -96,13 +93,18 @@ function draw(){
     pop();
     }
 }
+//blackhole creation
 function mousePressed() {
     if(isoversun == true){
         blackhole = true; 
         frameclick = frameCount;        
-    }
-    
-  }
+    } 
+}
+//save the day/stop
+function keyPressed(){
+    noLoop();
+}
+
 function polygon(x, y, radius, npoints) {
     var angle = TWO_PI / npoints;
     beginShape();

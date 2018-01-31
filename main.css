@@ -1,5 +1,13 @@
 #title{
     color: red;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-family: URW Chancery L, cursive;
+    font-size: 30px;
+}
+.heading h1{
+    margin: 0
+}
+
+.heading h2{
+    font-family: URW Chancery L, cursive;
+    margin: 0
 }
