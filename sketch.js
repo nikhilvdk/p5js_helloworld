@@ -15,7 +15,7 @@ var blackhole;
 var frameclick;
 
 function setup(){
-    createCanvas(1300, 550);
+    createCanvas(1265, 570);
     clr = color(107, 142, 35);
     rectMode(CENTER);
     img = loadImage("spacebackground.jpg")
