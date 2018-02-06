@@ -27,14 +27,8 @@ function draw(){
     background(img);
 
     distance = dist(mouseX, mouseY, 625, 254);
-    
-
-    // background(255, 255, 255);
-
-
-        cursor(WAIT);
  
-    
+    cursor(WAIT);
 
     //sun
     push();
