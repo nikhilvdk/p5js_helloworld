@@ -18,22 +18,22 @@ function setup(){
     createCanvas(1300, 550);
     clr = color(107, 142, 35);
     rectMode(CENTER);
+    img = loadImage("spacebackground.jpg")
     
 }
 
 
 function draw(){
+    background(img);
 
     distance = dist(mouseX, mouseY, 625, 254);
     
 
-    background(255, 255, 255);
+    // background(255, 255, 255);
 
-    if (mouseX < 200) {
-        cursor(HAND);
-      } else {
+
         cursor(WAIT);
-      }
+ 
     
 
     //sun
@@ -84,7 +84,8 @@ function draw(){
       }
 
 
-    // cosmicbackground();
+    // cosmicbackground(); not used due to processing intensity
+
     if(blackhole == true){
     push();
     noStroke();
